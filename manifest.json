@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-btwrpg",
+	"name": "Beyond the Wall RPG Tools",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "GM tools for Beyond the Wall RPG",
+	"author": "Oskar Świda",
+	"authorUrl": "https://github.com/oswida/obsidian-btwrpg",
+	"isDesktopOnly": false
+}
