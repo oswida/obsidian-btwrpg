@@ -6,3 +6,123 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.btwrpg-statblock {
+	background-color: #00000033;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	gap: 5px;
+}
+
+.btwrpg-title {
+	font-size: larger;
+	font-weight: bold;
+}
+
+.btwrpg-note {
+	font-size: smaller;
+	font-style: italic;
+}
+
+.btwrpg-statblock p {
+	margin: 0px;
+}
+
+.btwrpg-statblock .btwrpg-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.btwrpg-row {
+	display: flex;
+	flex-direction: row;
+	margin: 0px;
+	padding: 0px;
+}
+
+.btwrpg-attr {
+	display: flex;
+	flex-direction: row;
+	gap: 3px;
+	align-items: center;
+}
+
+.btwrpg-attr :nth-child(1) {
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: solid 1px #00000055;
+	min-width: 10em;
+}
+
+.btwrpg-attr :nth-child(2) {
+	background-color: #00000055;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3em;
+}
+
+.btwrpg-attr :nth-child(3) {
+	background-color: #00000044;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3em;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.btwrpg-save {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	align-items: center;
+}
+
+.btwrpg-save :nth-child(1) {
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: solid 1px #00000055;
+	min-width: 12em;
+}
+
+.btwrpg-save :nth-child(2) {
+	background-color: #00000055;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3em;
+	border-radius: 50%;
+}
+
+.btwrpg-value {
+	display: flex;
+	flex-direction: row;
+	gap: 3px;
+	align-items: center;
+}
+
+.btwrpg-value :nth-child(1) {
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: solid 1px #00000055;
+	min-width: 12em;
+}
+
+.btwrpg-value :nth-child(2) {
+	background-color: #00000055;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3em;
+	border-radius: 10px;
+}

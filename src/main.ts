@@ -1,6 +1,8 @@
-import { Plugin } from "obsidian";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { MarkdownPostProcessorContext, Plugin, parseYaml } from "obsidian";
 import { DEFAULT_SETTINGS, PluginSettings } from "./common/types";
 import { SettingTab } from "./ui";
+import { PcStat } from "./markdown";
 
 export default class BtWRpgPlugin extends Plugin {
 	settings: PluginSettings;
@@ -8,6 +10,10 @@ export default class BtWRpgPlugin extends Plugin {
 	async onload() {
 		await this.loadSettings();
 		this.addSettingTab(new SettingTab(this.app, this, this.settings));
+		this.registerMarkdownCodeBlockProcessor(
+			"btwrpg-pc",
+			this.processPcStat.bind(this)
+		);
 
 		// This creates an icon in the left ribbon.
 		// const ribbonIconEl = this.addRibbonIcon(
@@ -89,6 +95,25 @@ export default class BtWRpgPlugin extends Plugin {
 
 	async saveSettings() {
 		await this.saveData(this.settings);
+	}
+
+	async processPcStat(
+		source: string,
+		el: HTMLElement,
+		ctx: MarkdownPostProcessorContext
+	): Promise<any> {
+		const yaml = parseYaml(source);
+		const renderData = { ...yaml };
+		ctx.addChild(
+			new PcStat(
+				el,
+				ctx.sourcePath,
+				renderData,
+				this.app,
+				this,
+				this.settings
+			)
+		);
 	}
 }
 
